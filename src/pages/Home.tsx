@@ -1,4 +1,4 @@
-"use client"
+""
 
 import { useState, useEffect } from "react"
 import { ArrowRight, Smartphone, Shield, Code, Zap, Users, Award, ChevronDown, Star, TrendingUp } from "lucide-react"

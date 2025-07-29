@@ -1,4 +1,4 @@
-"use client"
+""
 
 import { useState, useEffect } from "react"
 import { ExternalLink, Star, Calendar, Tag, ArrowRight } from "lucide-react"

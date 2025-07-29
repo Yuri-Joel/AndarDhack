@@ -1,4 +1,4 @@
-"use client"
+""
 
 import { useState, useEffect } from "react"
 import { Target, Eye, Award, Users, Lightbulb, Shield, Calendar, MapPin } from "lucide-react"
