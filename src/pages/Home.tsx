@@ -1,9 +1,10 @@
-""
-
 import { useState, useEffect } from "react"
-import { ArrowRight, Smartphone, Shield, Code, Zap, Users, Award, ChevronDown, Star, TrendingUp } from "lucide-react"
+import { ArrowRight, Smartphone, Shield, Code, Zap, Users, Award, ChevronDown,  Newspaper, MessageSquare, Phone, Mail } from "lucide-react"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import { Link } from "react-router-dom"
+import { GooglePlay } from "../components/icons/GooglePlayIcon"
+import { AppStoreIcon } from "../components/icons/AppStoreIcon"
 
 export const Home = ()=>{
   const [isVisible, setIsVisible] = useState(false)
@@ -86,50 +87,34 @@ export const Home = ()=>{
       </section>
 
       {/* Featured Product Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-orange-100 px-4 py-2 rounded-full mb-4">
-              <Star className="h-5 w-5 text-orange-500" />
-              <span className="text-orange-700 font-semibold">Produto em Destaque</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-purple-900 mb-6">ATM NA MÃO</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nossa solução patenteada que revoluciona o acesso a serviços bancários, permitindo transações financeiras
-              através de tecnologia móvel avançada e segura.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="space-y-4">
-                {[
-                  "Transações bancárias sem cartão físico",
-                  "Segurança de ponta com biometria",
-                  "Interface intuitiva e acessível",
-                  "Disponível 24/7 em qualquer lugar",
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-white rounded-full"></div>
-                    </div>
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <button className="bg-purple-900 hover:bg-purple-800 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                Saiba Mais sobre ATM NA MÃO
+      <section className="py-16 px-4 bg-gray-100">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+          <div className="bg-purple-800 rounded-lg shadow-lg p-8 text-white space-y-4">
+            <h3 className="text-2xl font-bold">Descubra mais sobre a Andhardack</h3>
+            <p className="text-purple-200">Conheça nossa história, missão e valores.</p>
+            <Link to="/sobre">
+              <button className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-300">
+                Saiba mais
               </button>
-            </div>
-            <div className="relative">
-              <div className="bg-gradient-to-r from-purple-100 to-orange-100 rounded-2xl p-8">
-                <img
-                  src="/assets/atm-logo.jpg"
-                  alt="ATM NA MÃO Interface"
-                  className="mx-auto rounded-xl shadow-lg"
-                />
-              </div>
-            </div>
+            </Link>
+          </div>
+          <div className="bg-orange-500 rounded-lg shadow-lg p-8 text-white space-y-4">
+            <h3 className="text-2xl font-bold">Soluções Andhardack</h3>
+            <p className="text-orange-100">Explore nossas soluções inovadoras para o seu negócio.</p>
+            <Link to="/servicos">
+              <button className="bg-purple-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-900 transition-colors duration-300">
+                Saiba mais
+              </button>
+            </Link>
+          </div>
+          <div className="bg-purple-800 rounded-lg shadow-lg p-8 text-white space-y-4">
+            <h3 className="text-2xl font-bold">Relatórios e Insights</h3>
+            <p className="text-purple-200">Acesse nossos relatórios e análises de mercado.</p>
+            <Link to="/blog">
+              <button className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-300">
+                Saiba mais
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -212,7 +197,7 @@ export const Home = ()=>{
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-900 to-purple-800">
+    {/*   <section className="py-20 px-4 bg-gradient-to-r from-purple-900 to-purple-800">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">Andhardack em Números</h2>
           <p className="text-xl text-purple-100 mb-12 max-w-4xl mx-auto">
@@ -244,7 +229,171 @@ export const Home = ()=>{
           </button>
         </div>
       </section>
+ */}
+   <section className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold text-purple-900 mb-12 text-center">Últimas Notícias</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                image: null,
+                title: "Saiba Como Participar no Sorteio da Campanha '50 ANOS'",
+                description:
+                  "Inserida nas comemorações do quinquagésimo aniversário da Independência de Angola, o Banco de Comércio e Indústria (BCI)",
+                badge: "Premiação",
+              },
+              {
+                image: null,
+                title: "Esclarecimento sobre a Multa Aplicada pelo Banco Nacional de Angola",
+                description:
+                  "Considerando a evolução dos sistemas de pagamento em Angola, o Banco Nacional de Angola anunciou através do Comunicado de 12 de Abril de 2024 a descontinuação da emissão de cheques e a consequente descontinuação da aceitação dos mesmos.",
+                badge: null,
+              },
+              {
+                image: null, // Placeholder for abstract graphic
+                title: "BNA saúda cumprimentos das medidas de intervenção correctiva aplicadas ao BCI",
+                description:
+                  "“No uso de suas atribuições legais e regulamentares, o Banco Nacional de Angola comunica que as medidas de",
+                badge: null,
+              },
+              {
+                image: null,
+                title: "BCI conclui com sucesso Plano de Recapitalização e Reestruturação",
+                description:
+                  "Considerando a evolução dos sistemas de pagamento em Angola, o Banco Nacional de Angola anunciou através do Comunicado de 12 de Abril de 2024 a descontinuação da emissão de cheques e a consequente descontinuação da aceitação dos mesmos.",
+                badge: null,
+              },
+            ].map((news, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+              >
+                {news.image ? (
+                  <div className="relative">
+                    <img src={news.image || "/placeholder.svg"} alt={news.title} className="w-full h-40 object-cover" />
+                    {news.badge && (
+                      <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        {news.badge}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="w-full h-40 bg-gradient-to-br from-purple-200 to-orange-200 flex items-center justify-center">
+                    {/* Placeholder for abstract graphic or text-only card */}
+                    {index === 2 && (
+                      <div className="w-24 h-24 bg-purple-500 rounded-full flex items-center justify-center">
+                        <Newspaper className="h-12 w-12 text-white" />
+                      </div>
+                    )}
+                  </div>
+                )}
+                <div className="p-6 space-y-3">
+                  <h3 className="text-lg font-bold text-purple-900 hover:text-orange-600 transition-colors duration-300 cursor-pointer">
+                    {news.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-3">{news.description}</p>
+                  <Link to="#" className="text-orange-600 font-semibold text-sm hover:underline">
+                    Ler mais <ArrowRight className="inline-block h-4 w-4 ml-1" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      <section className="py-20 px-4 bg-gradient-to-r from-purple-900 to-purple-800">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Mobile Mockups */}
+          <div className="relative flex justify-center lg:justify-end">
+            <img
+              src="/assets/atm-logo.jpg"
+              alt="Andhardack Mobile App"
+              className="w-full max-w-[250px] transform rotate-6 translate-x-4 rounded-xl shadow-2xl border-4 border-white"
+            />
+            <img
+              src="/assets/atm-logo.jpg"
+              alt="Andhardack Mobile App"
+              className="w-full max-w-[250px] absolute top-0 left-1/2 transform -translate-x-1/2 -rotate-6 -translate-y-4 rounded-xl shadow-2xl border-4 border-white"
+            />
+          </div>
+
+          {/* Right Column - Text and Download Buttons */}
+          <div className="text-center lg:text-left space-y-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+              Tenha a Andhardack no seu
+              <span className="block text-orange-400">Smartphone</span>
+            </h2>
+            <p className="text-xl text-purple-100 max-w-lg mx-auto lg:mx-0">
+              Acesse todos os nossos serviços e soluções na palma da sua mão. Nada mais simples e seguro.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link to="#" target="_blank" rel="noopener noreferrer">
+                <button className=" text-gray-800 px-6 py-3 rounded-lg font-semibold flex items-center justify-center transition-colors duration-300">
+                <GooglePlay />
+                </button>
+              </Link>
+              <Link to="#" target="_blank" rel="noopener noreferrer">
+                <button className=" text-gray-800 px-6 py-3 rounded-lg font-semibold flex items-center justify-center transition-colors duration-300">
+              <AppStoreIcon />
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Support/Contact Section - Inspired by BCI, with Andhardack colors */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Contact Info */}
+          <div className="space-y-8">
+            <h2 className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight">
+              Precisa de apoio?
+              <span className="block text-orange-600">Fale connosco</span>
+            </h2>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              Estamos aqui para ajudar! Contacte-nos por email, telefone ou preenchendo o formulário abaixo. Estamos à
+              sua espera.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-lg shadow-md p-6 space-y-2 border border-gray-200">
+                <Mail className="h-8 w-8 text-orange-500 mb-2" />
+                <h3 className="text-lg font-semibold text-purple-900">Email</h3>
+                <p className="text-gray-600">apoio.cliente@andhardack.com</p>
+              </div>
+              <div className="bg-white rounded-lg shadow-md p-6 space-y-2 border border-gray-200">
+                <Phone className="h-8 w-8 text-orange-500 mb-2" />
+                <h3 className="text-lg font-semibold text-purple-900">Telefone</h3>
+                <p className="text-gray-600">+244 900 000 000</p>
+              </div>
+              <div className="bg-white rounded-lg shadow-md p-6 space-y-2 border border-gray-200">
+                <Users className="h-8 w-8 text-orange-500 mb-2" />
+                <h3 className="text-lg font-semibold text-purple-900">Apoio ao cliente</h3>
+                <Link to="/contato" className="text-orange-600 font-semibold text-sm hover:underline">
+                  Saiba mais <ArrowRight className="inline-block h-4 w-4 ml-1" />
+                </Link>
+              </div>
+              <div className="bg-white rounded-lg shadow-md p-6 space-y-2 border border-gray-200">
+                <MessageSquare className="h-8 w-8 text-orange-500 mb-2" />
+                <h3 className="text-lg font-semibold text-purple-900">Reclamações</h3>
+                <Link to="/contato" className="text-orange-600 font-semibold text-sm hover:underline">
+                  Preencha o nosso formulário <ArrowRight className="inline-block h-4 w-4 ml-1" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Image */}
+          <div className="relative flex justify-center lg:justify-start">
+            <img
+              src="/assets/image.png"
+              alt="Customer Support"
+              className="w-full h-auto rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   )
